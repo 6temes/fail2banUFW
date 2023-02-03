@@ -16,7 +16,7 @@ ignoreip = 127.0.0.1/8 ::1
 
 ### Amount of time (in seconds) than an offending system should be banned.
 ## Suggest 1800 (30 min).  This is long enough to discourage probe 'scripts'.
-bantime = 1800
+bantime = 2628000 # 1 month
 
 ### Timeframes:  A system is banned if it generates 'maxretry' number of
 ### connection attempts within 'findtime' seconds.  This can be either, or
@@ -24,7 +24,7 @@ bantime = 1800
 ### closed port, etc.
 ## Suggest: 5 attempts within 5 minutes (agressive).  Some people like 20
 ## within 10 min (moderate).
-maxretry = 5
+maxretry = 3
 findtime = 300
 
 
@@ -33,17 +33,17 @@ findtime = 300
 #
 
 ### The destination email address for actions that involve email notifications.
-destemail = account@domain.tld
+# destemail = account@domain.tld
 
 ### The sender email for actions that are sending emails.
 ### Note: 'sendername' doesn't seem to work, it's usually overriden by the MTA.
-sender = thismachine@domain.tld
+# sender = thismachine@domain.tld
 
 ### The MTA to use for sending email.  If you follow my standard setup as
 ### outlined at https://mytechiethoughts.com, then you are probably using msmtp
 ### which means you can use the default here: sendmail.  MOST setups can also
 ### just use the default too.
-mta = sendmail
+# mta = sendmail
 
 
 #
@@ -69,4 +69,4 @@ banaction = ufw
 ## action_ = just execute 'banaction'
 ## action_mw = 'banaction' and email a whois report to destemail
 ## action_mwl = 'banaction' and email a whois report & log lines to destemail
-action = %(action_mwl)s
+action = %(action_)s
