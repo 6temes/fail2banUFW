@@ -7,9 +7,18 @@
 
 ### Set logging options
 ## verbosity -- options: CRITICAL, ERROR (default), WARNING, NOTICE, INFO, DEBUG
-loglevel = INFO
-## log file location (suggest: /var/log/fail2ban.log)
-logtarget = /var/log/fail2ban.log
+loglevel = NOTICE
+
+# Option: logtarget
+# Notes.: Set the log target. This could be a file, SYSLOG, STDERR or STDOUT.
+#         Only one log target can be specified.
+#         If you change logtarget from the default value and you are
+#         using logrotate -- also adjust or disable rotation in the
+#         corresponding configuration file
+#         (e.g. /etc/logrotate.d/fail2ban on Debian systems)
+# Values: [ STDOUT | STDERR | SYSLOG | SYSOUT | FILE ]  Default: STDERR
+#
+logtarget = STDOUT
 
 ### Amount of time (in seconds) before HISTORY of bans are cleared. (NOTE: NOT
 ### active bans! This is a record of previous bans.)
